@@ -1,0 +1,53 @@
+Quan Vu
+COSC 301A - Spring 2017
+Homework 1
+
+1. Using ls -l presidents.txt gives the following:
+	-rw-rw-r-- 1 qvu qvu  318 Jan 29 12:30 presidents.txt
+   The file belongs to the user "qvu".
+   The file belongs to the group "qvu".
+   The superuser can read and write to this file.
+   Members of the group "qvu" can read and write to the file.
+   Everyone else can read the file.
+2. Using du -h foo/, we see the following results:
+	4.0K	./foo/b/c
+	56K	./foo/b/d
+	116K	./foo/b
+	184K	./foo/
+3. chmod 600 presidents.txt
+   Using ls -l presidents.txt gives the following:
+	-rw------- 1 qvu qvu 318 Jan 29 12:30 ./presidents.txt
+4. Content of mine.sh:
+	#! /bin/bash
+	chmod 600 presidents.txt
+	ls -l presidents.txt
+   Command to change permissions for mine.sh: chmod 700 mine.sh
+5. The initial dot tells us that the shell script is located in the current directory. Since the shell that we just wrote is not present in the default directories for executable programs, we have to provide a pathname, saying that this command mine.sh is found in the current directory.
+6. We can use "less" to view the content of text files.
+7. less foo/file1.stuff
+	A
+	A's
+	AA's
+	AB's
+	ABM's
+	AC's
+	ACTH's
+	AI's
+	AIDS's
+	AM's
+8. We can use text editors to view and edit (given appropriate permissions) the content of an ACSII viewable file. Two programs that can do so are vi and less
+9. Using elevated authority we can view the content of the shadow file as the superuser:
+	sudo cat /etc/shadow
+10. cp -R foo/ bar/
+11. mkdir baz
+    cd foo/
+    cp *.c baz/
+12. From hw1 folder:
+    cp baz/file0.c bar/hello\ world.c 
+13. echo "Brian Casey" >> presidents.txt
+14. grep -v "George" presidents.txt > temporary.txt
+    mv temporary.txt presidents.txt
+15. gedit & opens the text editor but in the background, so that the prompt returns on the terminal, allowing the user to issue additional commands to the shell while gedit is still open.
+16.  ps -eF | grep "qvu" | sort -nrk5 | head -n 5
+
+
